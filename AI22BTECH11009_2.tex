@@ -263,35 +263,29 @@ AI1110 Assignment 2 in \LaTeX
 %%%%%%%%%%%%%%%%%%%%%  This is my Assignment %%%%%%%%%%%%%%%%%%%%%
 \textbf{12.13.6.16}: Bag I contains 3 red balls and 4 black balls and Bag II contains 4 red and 5 black balls. One ball is transfered from Bag I to Bag II and then a ball is drawn from Bag II. The ball so drawn is found to be red in colour. Find the probability that the transfered ball is black.
 \\\textbf{Solution}:
+Let $X$ be the color of the ball transferred from Bag I to Bag II, where $X = 0$ if the ball is red, and $X = 1$ if the ball is black. Let $Y$ be the color of the ball drawn from Bag II, where $Y = 0$ if the ball is red, and $Y = 1$ if the ball is black.
 
-Let us first assume A denote the events that a red ball is transferred from bags I to II and B denote the event that a black ball is transferred from bags I to II.
+By using Bayes' theorem,the probability that the transferred ball is black given that the drawn ball is red 
 \begin{align}
- \pr{A} = \frac{3}{7} 
-\\ \pr{B} = \frac{4}{7}
+\pr{X = 1|Y = 0} &= \frac{\pr{Y = 0|X = 1} \times \pr{X = 1}}{\pr{Y = 0}}
+\end{align}
+where $P(Y=0 | X=1)$ is the probability of drawing a red ball from Bag II given that the transferred ball is black, $P(X=1)$ is the probability of transferring a black ball from Bag I to Bag II, and $P(Y=0)$ is the probability of drawing a red ball from Bag II.
+
+We can calculate each of these probabilities as follows:
+\begin{align}
+\pr{Y = 0|X = 1} &= \frac{4}{10}
+\\\implies \pr{Y = 0|X = 1} &= \frac{2}{5}
+\\\pr{X = 1} &= \frac{4}{7}
+\\\pr{Y = 0} &= \pr{Y = 0|X = 0} \times \pr{X = 0} + \pr{Y = 0|X = 1} \times \pr{X = 1}
+\\\implies \pr{Y = 0} &= \frac{5}{10} \times \frac{3}{7} + \frac{4}{10} \times \frac{4}{7}
+\\\implies \pr{Y = 0} &= \frac{15}{70} + \frac{16}{70}
+\\\implies \pr{Y = 0} &= \frac{31}{70}
+\\Substituting these values in equation number (1),
+\\\pr{X = 1|Y = 0} &= \frac{\frac{4}{10} \times \frac{4}{7}}{\frac{31}{70}}
+\\\implies \pr{X = 1|Y = 0} &= \frac{\frac{16}{70}}{\frac{31}{70}}
+\\\implies \pr{X = 1|Y = 0} &= \frac{16}{31}
 \end{align}
 
-Let X be the event that the drawn ball is red,
-
-$\bullet$ when the red ball is transferred from Bag I to Bag II
-\begin{align}
-\pr{X|A} &= \frac{5}{10}
-\\\implies \pr{X|A} &= \frac{1}{2} 
-\end{align}
-
-$\bullet$ when the black ball is transferred from Bag I to Bag II
-\begin{align}
-\pr{X|B} &= \frac{4}{10}
-\\\implies \pr{X|B} &= \frac{2}{5}
-\end{align}
-
-Hence, the probability of the event that transferred ball is black given that the drawn ball is red
-\begin{align}
-\pr{B|X} &= \frac{\pr{B} \times \pr{X|B}}{\pr{A} \times \pr{X|A} + \pr{B} \times \pr{X|B}}
-\\\implies \pr{B|X} &= \frac{\frac{4}{7} \times \frac{2}{5}}{\frac{3}{7} \times \frac{1}{2} + \frac{4}{7} \times \frac{2}{5}}
-\\\implies \pr{B|X} &= \frac{16}{31}
-\end{align}
-
-
-
+$\therefore$ The probability that the transferred ball is black given that the drawn ball is red is $\frac{16}{31}$.
 
 \end{document}
