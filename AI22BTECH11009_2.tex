@@ -269,10 +269,10 @@ AI1110 Assignment 2 in \LaTeX
 %%  This is a LaTeX2e table fragment exported from Gnumeric.        %%
 %%                                                                  %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{center}
-\begin{tabular}{ccc}
-          &      \textbf{Table:Random variables and their values}		& \\
-\end{tabular}
+\begin{table}[h]
+\centering
+\caption{Random variables and their distribution}
+\label{tab:Random variable-Description-Values}
 \begin{tabular}{|c|c|c|}             
 \hline
 Random variable	&       Description	 &          Values\\
@@ -282,7 +282,8 @@ Random variable	&       Description	 &          Values\\
                Y	&Colour of drawn ball	&        0 for red,1 for black\\
 \hline 
 \end{tabular}
-\end{center}
+\end{table}
+\\
 By using Bayes' theorem,the probability that the transferred ball is black given that the drawn ball is red 
 \begin{align}
 \pr{X = 1|Y = 0} &= \frac{\pr{Y = 0|X = 1} \times \pr{X = 1}}{\pr{Y = 0}}
@@ -298,13 +299,17 @@ We can calculate each of these probabilities as follows:
 \\\implies \pr{Y = 0} &= \frac{5}{10} \times \frac{3}{7} + \frac{4}{10} \times \frac{4}{7}
 \\\implies \pr{Y = 0} &= \frac{15}{70} + \frac{16}{70}
 \\\implies \pr{Y = 0} &= \frac{31}{70}
-\end{align}
+ \end{align}
+\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                                                                  %%
 %%  This is a LaTeX2e table fragment exported from Gnumeric.        %%
 %%                                                                  %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{center}
+\begin{table}
+\centering 
+\caption{Event and probability Table}
+\label{tab:event-probability}
 \begin{tabular}{|c|c|}
 \hline
 Event	&Probability\\
@@ -316,7 +321,9 @@ $X = 1$	& 4/7 \\
 $Y = 0$	& 31/70 \\
 \hline
 \end{tabular}
-\end{center}
+\end{table}
+\\
+\\
 Substituting these values in equation number (1),
 \begin{align}
 \pr{X = 1|Y = 0} &= \frac{\frac{4}{10} \times \frac{4}{7}}{\frac{31}{70}}
