@@ -3,7 +3,7 @@
 \documentclass[journal,12pt,onecolumn]{IEEEtran}
 %\documentclass[conference]{IEEEtran}
 %\IEEEoverridecommandlockouts
-% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+ % The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
 \usepackage{cite}
 \usepackage{amsmath,amssymb,amsfonts,amsthm}
 \usepackage{algorithmic}
@@ -269,26 +269,21 @@ AI1110 Assignment 2 in \LaTeX
 %%  This is a LaTeX2e table fragment exported from Gnumeric.        %%
 %%                                                                  %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{table}[h]
+\begin{table}[htpb]
 \centering
 \caption{Random variables and their distribution}
 \label{tab:Random variable-Description-Values}
-\begin{tabular}{|c|c|c|}             
-\hline
-Random variable	&       Description	 &          Values\\
-\hline 
-               X	&Colour of transferred ball	&        0 for red,1 for black\\
-\hline           
-               Y	&Colour of drawn ball	&        0 for red,1 for black\\
-\hline 
-\end{tabular}
+\input{table1.tex}
 \end{table}
 \\
 By using Bayes' theorem,the probability that the transferred ball is black given that the drawn ball is red 
 \begin{align}
 \pr{X = 1|Y = 0} &= \frac{\pr{Y = 0|X = 1} \times \pr{X = 1}}{\pr{Y = 0}}
+\label{eq:conditional_probability}
 \end{align}
-where $P(Y=0 | X=1)$ is the probability of drawing a red ball from Bag II given that the transferred ball is black, $P(X=1)$ is the probability of transferring a black ball from Bag I to Bag II, and $P(Y=0)$ is the probability of drawing a red ball from Bag II.
+
+Equation \eqref{eq:conditional_probability} gives the conditional probability of $X$ being 1 given that $Y$ is 0
+\\where $P(Y=0 | X=1)$ is the probability of drawing a red ball from Bag II given that the transferred ball is black, $P(X=1)$ is the probability of transferring a black ball from Bag I to Bag II, and $P(Y=0)$ is the probability of drawing a red ball from Bag II.
 
 We can calculate each of these probabilities as follows:
 \begin{align}
@@ -299,7 +294,7 @@ We can calculate each of these probabilities as follows:
 \\\implies &= \frac{5}{10} \times \frac{3}{7} + \frac{4}{10} \times \frac{4}{7}
 \\\implies &= \frac{15}{70} + \frac{16}{70}
 \\\implies &= \frac{31}{70}
- \end{align}
+\end{align}
 \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                                                                  %%
@@ -310,19 +305,8 @@ We can calculate each of these probabilities as follows:
 \centering 
 \caption{Event and probability Table}
 \label{tab:event-probability}
-\begin{tabular}{|c|c|}
-\hline
-Event	&Probability\\
-\hline
-$Y = 0|X = 1$	& 2/5 \\
-\hline
-$X = 1$	& 4/7 \\
-\hline
-$Y = 0$	& 31/70 \\
-\hline
-\end{tabular}
+\input{table2.tex}
 \end{table}
-\\
 \\
 Substituting these values in equation number (1),
 \begin{align}
