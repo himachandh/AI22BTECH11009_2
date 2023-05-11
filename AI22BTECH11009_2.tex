@@ -220,8 +220,8 @@ AI1110 Assignment 2 in \LaTeX
 % The only time the second header will appear is for the odd numbered pages
 % after the title page when using the twoside option.
 % 
-% *** Note that you probably will NOT want to include the author's ***
-% *** name in the headers of peer review papers.                   ***
+% * Note that you probably will NOT want to include the author's *
+% * name in the headers of peer review papers.                   *
 % You can use \ifCLASSOPTIONpeerreview for conditional compilation here if
 % you desire.
 % If you want to put a publisher's ID mark on the page you can do it like
@@ -264,6 +264,8 @@ AI1110 Assignment 2 in \LaTeX
 \textbf{12.13.6.16}: Bag I contains 3 red balls and 4 black balls and Bag II contains 4 red and 5 black balls. One ball is transfered from Bag I to Bag II and then a ball is drawn from Bag II. The ball so drawn is found to be red in colour. Find the probability that the transfered ball is black.
 \\\textbf{Solution}:
 \\
+\begin{enumerate}[label=(\alph*)] 
+\item Let the random variables be
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                                                                  %%
 %%  This is a LaTeX2e table fragment exported from Gnumeric.        %%
@@ -275,46 +277,47 @@ AI1110 Assignment 2 in \LaTeX
 \label{tab:Random variable-Description-Values}
 \input{table1.tex}
 \end{table}
-\\
-By using Bayes' theorem,the probability that the transferred ball is black given that the drawn ball is red 
+\\ 
+From given information
 \begin{align}
-\pr{X = 1|Y = 0} &= \frac{\pr{Y = 0|X = 1} \times \pr{X = 1}}{\pr{Y = 0}}
-\label{eq:conditional_probability}
+\pr{X = 0,Y = 0} &= \frac{3}{7} \\
+\pr{X = 1,Y = 0} &= \frac{4}{7}
 \end{align}
-
-Equation \eqref{eq:conditional_probability} gives the conditional probability of $X$ being 1 given that $Y$ is 0
-\\where $P(Y=0 | X=1)$ is the probability of drawing a red ball from Bag II given that the transferred ball is black, $P(X=1)$ is the probability of transferring a black ball from Bag I to Bag II, and $P(Y=0)$ is the probability of drawing a red ball from Bag II.
-
-We can calculate each of these probabilities as follows:
+After ball is tranferred from bag I to bag II
 \begin{align}
-\pr{Y = 0|X = 1} &= \frac{4}{10}
-\\\implies&= \frac{2}{5}
-\\\pr{X = 1} &= \frac{4}{7}
-\\\pr{Y = 0} &= \pr{Y = 0|X = 0} \times \pr{X = 0} + \pr{Y = 0|X = 1} \times \pr{X = 1}
-\\\implies &= \frac{5}{10} \times \frac{3}{7} + \frac{4}{10} \times \frac{4}{7}
-\\\implies &= \frac{15}{70} + \frac{16}{70}
-\\\implies &= \frac{31}{70}
+\pr{X = 0,Y = 1} &= \pr{X = 0,Y = 0}\times \frac{5}{10} + \pr{X = 1,Y = 0}\times \frac{4}{10}
 \end{align}
-\\
+As $X$ and $Y$ are independent,
+\begin{align}
+\pr{X = 0,Y = 1} &= \frac{3}{7}\times \frac{5}{10} + \frac{4}{7}\times \frac{4}{10}\\
+\implies &= \frac{31}{70}
+\end{align}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                                                                  %%
 %%  This is a LaTeX2e table fragment exported from Gnumeric.        %%
 %%                                                                  %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{table}
+\begin{table}[htpb]
 \centering 
 \caption{Event and probability Table}
 \label{tab:event-probability}
 \input{table2.tex}
 \end{table}
-\\
-Substituting these values in equation number (1),
+\item Required probability is
 \begin{align}
-\pr{X = 1|Y = 0} &= \frac{\frac{4}{10} \times \frac{4}{7}}{\frac{31}{70}}
+\pr{X=1,Y=0|X=0,Y=1} &= \frac{\pr{X=0,Y=1|X=1,Y=0}\pr{X=1,Y=0}}{\pr{X=0,Y=1}}
+\label{eq:conditional_probability}
+\end{align}
+
+Equation \eqref{eq:conditional_probability} gives the drawn ball from bag I is black given ball drawn from bag II is red.
+\\
+Substituting these values in equation number (6),
+\begin{align}
+\pr{X=1,Y=0|X=0,Y=1}&= \frac{\frac{4}{10} \times \frac{4}{7}}{\frac{31}{70}}
 \\\implies &= \frac{\frac{16}{70}}{\frac{31}{70}}
 \\\implies &= \frac{16}{31}
 \end{align}
 
 $\therefore$ The probability that the transferred ball is black given that the drawn ball is red is $\frac{16}{31}$.
-
+\end{enumerate}
 \end{document}
